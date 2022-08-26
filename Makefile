@@ -6,4 +6,4 @@ main: main.cpp
 	$(CC) $(CFLAGS) $< $(LFLAGS) -o $@
 
 clean:
-	rm -rf main
+	rm -f main
