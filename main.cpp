@@ -87,8 +87,8 @@ bool solve(int row, std::vector<std::vector<int>>& board){
 		else{
 			end = SDL_GetPerformanceCounter();
 			elapsed = (end-fpscheck) / (float)SDL_GetPerformanceFrequency();
-			if(period < 35) delta = period - 0.1f - elapsed * 1000;
-			else delta = 33.3f - elapsed * 1000; 
+			if(period < 12) delta = period - 0.1f - elapsed * 1000;
+			else delta = 11.1f - elapsed * 1000; 
 			if(delta > 0 && delta < period - (end - start) / (float)SDL_GetPerformanceFrequency()) SDL_Delay(delta);
 		}
 	}
