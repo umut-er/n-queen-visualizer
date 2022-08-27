@@ -20,7 +20,6 @@ SDL_Rect rect;
 SDL_Event event;
 Uint64 start, end, fpscheck, elapsed, period;
 float delta;
-
 bool time_check;
 
 
@@ -121,7 +120,7 @@ int main(int argc, char** argv){
 	
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG);
-	window = SDL_CreateWindow("Chess Board", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH + 200, HEIGHT, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("Chess Board", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	queen = IMG_LoadTexture(renderer, "assets/queen.png");
 	dark = IMG_LoadTexture(renderer, "assets/dark.png");
@@ -132,7 +131,7 @@ int main(int argc, char** argv){
 	
 	std::vector<std::vector<int>> board;
 	board.resize(BOARD_SIZE, std::vector<int>(BOARD_SIZE));
-	
+
 	solve(0, board);
 	
 	while(true){
